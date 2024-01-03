@@ -239,6 +239,15 @@ function CheckQuest()
         Quest["QuestName"] = "ForgottenQuest"
         Quest["ID"] = 2
     end
+    local MobCFrame = {}
+	if EnemySpawns:FindFirstChild(Quest["MobName"]) then
+    	for i, v in pairs(EnemySpawns:GetChildren()) do
+    	    if v:IsA("Part") and v.Name == Quest["MobName"] then
+	            table.insert(MobCFrame, v.CFrame)
+	        end
+	    end
+	end
+	Quest["Position"] = MobCFrame
 	return Quest
 end
 function QuestDungKo(mob)
@@ -559,8 +568,8 @@ spawn(function()
                         end
                     else
                         pcall(function()
-                             TP(CheckQuest()["Position"][CheckQuest().MobName .. tostrinh(Pos)] * CFrame.new(5, 30, 5))
-                         end)
+                            TP(CheckQuest()["Position"][CheckQuest().MobName .. tostrinh(Pos)] * CFrame.new(5, 30, 5))
+                        end)
                          Pos = Pos + 1
                          wait(1.2)
                     end
