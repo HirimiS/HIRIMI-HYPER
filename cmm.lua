@@ -2,6 +2,20 @@ local P = game.Players
 local LP = P.LocalPlayer
 local WS = game:GetService("Workspace")
 local WO = WS["_WorldOrigin"]
+local RS = game:GetService("ReplicatedStorage")
+local Remotes = RS:WaitForChild("Remotes")
+local Remote = Remotes:WaitForChild("CommF_")
+local RunS = game:GetService("RunService")
+local Loop = RunS.RenderStepped
+local Data = LP.Data
+local WS = game:GetService("Workspace")
+local WO = WS["_WorldOrigin"]
+local VU = game:GetService("VirtualUser")
+local EnemySpawns = WO.EnemySpawns
+local Enemies = WS.Enemies
+local CameraShaker = require(RS.Util.CameraShaker)
+local GuideModule = require(RS.GuideModule)
+local Quests = require(RS.Quests)
 if game.PlaceId == 2753915549 then
     Main = true
 elseif game.PlaceId == 4442272183 then
