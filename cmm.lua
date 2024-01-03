@@ -16,6 +16,11 @@ function GetDistance(q)
         return LP:DistanceFromCharacter(q)
     end
 end
+function TpEntrance(P)
+    Remote:InvokeServer("requestEntrance", P)
+    LP.Character.PrimaryPart.CFrame = CFrame.new(LP.Character.PrimaryPart.CFrame.X, LP.Character.PrimaryPart.CFrame.Y + 50, LP.Character.PrimaryPart.CFrame.Z)
+    wait(0.5)
+end
 function CheckNearestTeleporter(P)
     local min = math.huge
     local min2 = math.huge
