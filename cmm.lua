@@ -558,9 +558,6 @@ spawn(function()
                             end
                         end
                     else
-                        if Pos == nil or Pos == "" or Pos > #CheckQuest()["Position"] then
-                            Pos = 1
-                        end
                         pcall(function()
                              TP(CheckQuest()["Position"][CheckQuest().MobName .. tostrinh(Pos)] * CFrame.new(5, 30, 5))
                          end)
