@@ -2,6 +2,13 @@ local P = game.Players
 local LP = P.LocalPlayer
 local WS = game:GetService("Workspace")
 local WO = WS["_WorldOrigin"]
+if game.PlaceId == 2753915549 then
+    Main = true
+elseif game.PlaceId == 4442272183 then
+    Dressora = true
+elseif game.PlaceId == 7449423635 then
+    Zou = true
+end
 function GetDistance(q)
     if typeof(q) == "CFrame" then
         return LP:DistanceFromCharacter(q.Position)
