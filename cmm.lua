@@ -8,7 +8,7 @@ elseif game.PlaceId == 4442272183 then
     Dressora = true
 elseif game.PlaceId == 7449423635 then
     Zou = true
-end
+end 
 function GetDistance(q)
     if typeof(q) == "CFrame" then
         return LP:DistanceFromCharacter(q.Position)
