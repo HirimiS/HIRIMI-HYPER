@@ -107,38 +107,40 @@ local KeyGen = {
     "78SFe04uGr8MwkHS7qhm"
 }
 spawn(function()
-    if table.find(Key, KeyGen) then
-        if Hub == "W-Azure" then
-            local keyazu = "YHGEXghimYSaIOiwqFIpetHBwsdGoQKx"
-            if script_key then
-                return
-            end
-            getgenv().Team = "Pirates"
-            script_key = keyazu
-            delay(DelayTime or 300,function()
-                local CG = game:GetService("CoreGui")
-                if not CG:FindFirstChild("W-azure") then
-                game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+    for i = 1,1 do
+        if (KeyGen[i] == Key) then
+            if Hub == "W-Azure" then
+                local keyazu = "YHGEXghimYSaIOiwqFIpetHBwsdGoQKx"
+                if script_key then
+                    return
                 end
-            end)
-            wait(2)
-            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/607f2cd3aa6f0808c9226aacb9bbceb0.lua"))()
-        elseif Hub == "Banana" then
-            getgenv().Key = "f6c79d3275bc5dbf"
-            getgenv().OldBanana = false
-            local c = "https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"
-            loadstring(game:HttpGet(c))()
-            print(("\n"):rep(40))
-        elseif Hub == "Luxury" then
-            _G.Key = "SGA5F-T3KC4-ZPSFY"
-            _G.DiscordId = "1117103662532141056"
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/NightsTimeZ/RoyryX/main/Loader.lua"))();
-            print(("\n"):rep(40))
-        elseif Hub == "RoyX" then
-            _G.Key = "9QJ1L-7EIK2-C9JDH"
-            _G.DiscordId = "1117103662532141056"
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Natsuhanaki/Royx_PC/main/loader.lua"))();
-            print(("\n"):rep(40))
+                getgenv().Team = "Pirates"
+                script_key = keyazu
+                delay(DelayTime or 300,function()
+                    local CG = game:GetService("CoreGui")
+                    if not CG:FindFirstChild("W-azure") then
+                    game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+                    end
+                end)
+                wait(2)
+                loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/607f2cd3aa6f0808c9226aacb9bbceb0.lua"))()
+            elseif Hub == "Banana" then
+                getgenv().Key = "25a3ef8bac10fecb"
+                getgenv().OldBanana = false
+                local c = "https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"
+                loadstring(game:HttpGet(c))()
+                print(("\n"):rep(40))
+            elseif Hub == "Luxury" then
+                _G.Key = "SGA5F-T3KC4-ZPSFY"
+                _G.DiscordId = "1117103662532141056"
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/NightsTimeZ/RoyryX/main/Loader.lua"))();
+                print(("\n"):rep(40))
+            elseif Hub == "RoyX" then
+                _G.Key = "9QJ1L-7EIK2-C9JDH"
+                _G.DiscordId = "1117103662532141056"
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Natsuhanaki/Royx_PC/main/loader.lua"))();
+                print(("\n"):rep(40))
+            end
         end
     end
 end)
