@@ -1,14 +1,3 @@
-repeat task.wait() until game:IsLoaded()
-if Key then
-    return
-end
-local KeyA = "GyijBiyjbHoljehaZO62"
-getgenv().Key = KeyA
-getgenv().Hub = "Banana" --W-Azure, Banana, Luxury, RoyX
-getgenv().Misc = {
-    ["Old Banana"] = false,
-    ["Auto Bounty W-Azure"] = false
-}
 local KeyGen = {
     "GyijBiyjbHoljehaZO62",
     "B2AuccoyM9RTw6Kikqz1",
