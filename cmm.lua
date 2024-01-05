@@ -1,106 +1,159 @@
-local P = game.Players
-local LP = P.LocalPlayer
-local WS = game:GetService("Workspace")
-local WO = WS["_WorldOrigin"]
-local RS = game:GetService("ReplicatedStorage")
-local Remotes = RS:WaitForChild("Remotes")
-local Remote = Remotes:WaitForChild("CommF_")
-local RunS = game:GetService("RunService")
-local Loop = RunS.RenderStepped
-local Data = LP.Data
-local WS = game:GetService("Workspace")
-local WO = WS["_WorldOrigin"]
-local VU = game:GetService("VirtualUser")
-local EnemySpawns = WO.EnemySpawns
-local Enemies = WS.Enemies
-local CameraShaker = require(RS.Util.CameraShaker)
-local GuideModule = require(RS.GuideModule)
-local Quests = require(RS.Quests)
-if game.PlaceId == 2753915549 then
-    Main = true
-elseif game.PlaceId == 4442272183 then
-    Dressora = true
-elseif game.PlaceId == 7449423635 then
-    Zou = true
-end 
-function GetDistance(q)
-    if typeof(q) == "CFrame" then
-        return LP:DistanceFromCharacter(q.Position)
-    elseif typeof(q) == "Vector3" then
-        return LP:DistanceFromCharacter(q)
-    end
+repeat task.wait() until game:IsLoaded()
+if Key then
+    return
 end
-function TpEntrance(P)
-    Remote:InvokeServer("requestEntrance", P)
-    LP.Character.PrimaryPart.CFrame = CFrame.new(LP.Character.PrimaryPart.CFrame.X, LP.Character.PrimaryPart.CFrame.Y + 50, LP.Character.PrimaryPart.CFrame.Z)
-    wait(0.5)
-end
-function CheckNearestTeleporter(P)
-    local min = math.huge
-    local min2 = math.huge
-    local choose 
-    if Zou then
-        TableLocations = {
-            ["1"] = Vector3.new(-5058.77490234375, 314.5155029296875, -3155.88330078125),
-            ["2"] = Vector3.new(5756.83740234375, 610.4240112304688, -253.9253692626953),
-            ["3"] = Vector3.new(-12463.8740234375, 374.9144592285156, -7523.77392578125),
-            ["4"] = Vector3.new(28282.5703125, 14896.8505859375, 105.1042709350586),
-            ["5"] = Vector3.new(-11993.580078125, 334.7812805175781, -8844.1826171875),
-            ["6"] = Vector3.new(5314.58203125, 25.419387817382812, -125.94227600097656)
-        }
-    elseif Dressora then
-        TableLocations = {
-            ["1"] = Vector3.new(-288.46246337890625, 306.130615234375, 597.9988403320312),
-            ["2"] = Vector3.new(2284.912109375, 15.152046203613281, 905.48291015625),
-            ["3"] = Vector3.new(923.21252441406, 126.9760055542, 32852.83203125),
-            ["4"] = Vector3.new(-6508.5581054688, 89.034996032715, -132.83953857422)
-        }
-    elseif Main then
-        TableLocations = {
-            ["1"] = Vector3.new(-7894.6201171875, 5545.49169921875, -380.2467346191406),
-            ["2"] = Vector3.new(-4607.82275390625, 872.5422973632812, -1667.556884765625),
-            ["3"] = Vector3.new(61163.8515625, 11.759522438049316, 1819.7841796875),
-            ["4"] = Vector3.new(3876.280517578125, 35.10614013671875, -1939.3201904296875)
-        }
-    end
-    TableLocations2 = {}
-    for r, v in pairs(TableLocations) do
-        TableLocations2[r] = (v - P.Position).Magnitude
-    end
-    for r, v in pairs(TableLocations2) do
-        if v < min then
-            min = v
-            min2 = v
-        end
-    end    
-    for r, v in pairs(TableLocations2) do
-        if v <= min then
-            choose = TableLocations[r]
-        end
-    end
-    if min2 <= GetDistance(P) then
-        return choose
-    end
-end
-function ToTween(Positions)
-    if LP.Character and LP.Character:FindFirstChild("Humanoid") and LP.Character.Humanoid.Health > 0 then
-        if not Speed or typeof(Speed) ~= "number" then
-            Speed = 325
-        end
-        Dis = GetDistance(Positions)       
-        if Dis <= 300 then
-            LP.Character.PrimaryPart.CFrame = Positions
-        end
-        tween = game:GetService("TweenService"):Create(LP.Character.PrimaryPart,TweenInfo.new(Dis/Speed, Enum.EasingStyle.Linear),{CFrame = Positions})
-        local ac = CheckNearestTeleporter(Positions)
-        if ac then
-            pcall(function()
-                tween:Cancel()
+local KeyA = "GyijBiyjbHoljehaZO62"
+getgenv().Key = KeyA
+getgenv().Hub = "Banana" --W-Azure, Banana, Luxury, RoyX
+getgenv().Misc = {
+    ["Old Banana"] = false,
+    ["Auto Bounty W-Azure"] = false
+}
+local KeyGen = {
+    "GyijBiyjbHoljehaZO62",
+    "B2AuccoyM9RTw6Kikqz1",
+    "pbxveWiy0I6wAaXP8tnz",
+    "7ce2gaN4xZh5wnuYy8rN",
+    "eBD7nXZU9ATP68cEH1zX",
+    'fy4OHlWWaFmL9zHfSjFY',
+    "TyWTYIUAbHptgDdFHtd1",
+    "lYxNI6JcszZeCvSGDGfY",
+    "O7lOIkGLuRJo3k9CqsiK",
+    "r5gae6pstsPkBvc96wji",
+    "rkgIlqjP5PHvvKf3T1Uq",
+    "Kg5BH3oHloUoBVzLUBkW",
+    "dCR8oWk7LCTF6kZ0zC15",
+    "PN9ZCIkizP7a5JtZMKDa",
+    "46GsVSCqBYrUCJ4mjQ5Z",
+    "wVEXX3LmEDKVpuiHnYiD",
+    "CvamKX8c10QTbZ0Bd7Ju",
+    "LdKWdRYgSHntBL1T5K4n",
+    "5NN6AmpjCjS8P0gUzdhC",
+    "OPen2gbKElzebRtyEA4n",
+    "mxJ4IBm16fyJDVWwYZUE",
+    "qtz06j3UDclYNFTnuXGw",
+    "RTeHNx5kAqVIv19qfS3m",
+    "aMXCHPKfDdjP7jfV2TED",
+    "oEV0mQx5ieEDBJFXSqvW",
+    "y92SpygqWXNJWK0Qg2Cg",
+    "eBNVztuwh9atGHFq9wRD",
+    "VjsUClfXStHOogkkTcEV",
+    "vjDHrVmKoCBQSAgTliLh",
+    "TDCatWjb6ZH07NnJRo3e",
+    "TvzS4WUEJf8ztO2VMF8Z",
+    "fvt99j2gkwBetk1TIiKF",
+    "vcAB4kt27HNqiH1irs3h",
+    "iZ2uXYbGSxvb5W4O9JZ1",
+    "D4FPKDztBFxa5J1QDNJK",
+    "VWNlE6C0vq1qEbQysUQO",
+    "dXRZSwGxkoGl6u6GYgJh",
+    "52lpQ1b8ToRMXpCBGW0L",
+    "c7H2nhzOEkRy3L0npLvK",
+    "yXUlX2uPU22PuEE6GRDK",
+    "DmMJBFxwFwBSburBctfX",
+    "psDeepYdRtmZaZcej1V4",
+    "CZoK8zMmbXCjf1eFXtO0",
+    "8mDZ4wQtXksPTENj9flA",
+    "gNoGUmp4fQorKTPvgTTL",
+    "51GhFbuJPUAsY1eLIMWC",
+    "YK99XWVSp3CZ6jDIWr5u",
+    "qtjBJHveJ9oInKb7HZ9s",
+    "mnRW68NVosMxc25jw2DW",
+    "NKlLue2LpwvV2q5687d1",
+    "74FFLdXs6aU2ePh6wynT",
+    "WL9FfibHCVjnke31vRoN",
+    "ngBO1fRIajRmmmjrPF7a",
+    "aYpEDxEyCKXZd13A0lYJ",
+    "SFSdNT6RAraZsxoE0X08",
+    "vDRbGiLlEEZMkRQEmSb8",
+    "zrRHebQ74kEahaCefEbD",
+    "eosMNA5egb3TcjZKDPWA",
+    "y0msQI3KFQGUSQhtUHLd",
+    "jaQMEvSovU9vJvdRTcM9",
+    "umR5eN5xfkau0S9dcJUR",
+    "ZTYg1RaQV4bBYn81R81x",
+    "7ezB2TYt0r8c8NVCTzwz",
+    "x9n6vHaTO4NnXiCcBMEW",
+    "SXm1r0n3RdqWh0MkAr4E",
+    "fRkjK70zwuHbm0YlMj1p",
+    "qCxdrxeN4UODWPA51T50",
+    "Vhsa2Le7fHfgllUtIBzc",
+    "vUqUbwIwc6YV2655DZ2D",
+    "93OaVByj9jHUdRNuUw6D",
+    "CTvxZlPLDSdx3IPDFQda",
+    "1QAo7nA2LAikfO2YRlOt",
+    "FswkyUMgxNojNIXSOdzh",
+    "X6zEMW2DcXpoER35kUYJ",
+    "CACfY8eqJLwUirY7ofnU",
+    "K5ZqhMXOM87DDfcqojn8",
+    "5OOdvIUy2MPhEdvy8cbu",
+    "BhkKevXMCxZ5ACyHVT7h",
+    "Zuaaqxlr3imgJbeMvQSc",
+    "gXtDc0x8RofRF2JpjYDc",
+    "7ilvyRB3NFgIlFik9w1Z",
+    "dDUQOFTDKmPvUb3fuf7V",
+    "oBBKAoGxYACW4Xw9tqwI",
+    "yzWEKjK6Y8WpXGVVEKFi",
+    "h1t75c53RZwJ40hZJMcp",
+    "GnVWJptt0cyDRVT64Iyy",
+    "2nhOu6Oq7tIAS1hvLKCa",
+    "XVdfXFodG38LzsnWgbuB",
+    "dah8f0F1ZP3CNYjr9ZvG",
+    "Gf9X771tRv2REYQSQtoh",
+    "ASQrMxlHCtFUE7FKi6wm",
+    "aF5RpV4S9FajHPwIkgok",
+    "DMu9H2mSTHdEvHEMjiEr",
+    "byLVZVonSnVMi7uuQBWL",
+    "N0zniXw2TgHZGCPpdLBj",
+    "0trNGYKgiQ3q6INDdPg3",
+    "XD6BirOQIrxDv2f2x97S",
+    "uHIlHxc7agkt51I0WgAd",
+    "5m2FLurs6KfD8SBgYKWt",
+    "cTBAmsSL9x3HSNiHb0u6",
+    "DuOe9Vpctnsjf6qdZq79",
+    "RctCURMPk8cRIHJGe5yi",
+    "xwaFTwPPU91BCD32y8oh",
+    "fRmYGkEf4vgS9i2aHV3P",
+    "gZFagSmbKzF9SuRDudSt",
+    "78SFe04uGr8MwkHS7qhm"
+}
+spawn(function()
+    if table.find(getgenv().Key, KeyGen) then
+        if Hub == "W-Azure" then
+            local keyazu = "YHGEXghimYSaIOiwqFIpetHBwsdGoQKx"
+            if script_key then
+                return
+            end
+            getgenv().Team = "Pirates"
+            script_key = keyazu
+            delay(DelayTime or 300,function()
+                local CG = game:GetService("CoreGui")
+                if not CG:FindFirstChild("W-azure") then
+                game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+                end
             end)
-            TpEntrance(ac)
+            wait(2)
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/607f2cd3aa6f0808c9226aacb9bbceb0.lua"))()
+        elseif Hub == "Banana" then
+            getgenv().Key = "f6c79d3275bc5dbf"
+            if getgenv().Misc["Old Banana"] == true then
+                getgenv().OldBanana = true
+            else
+                getgenv().OldBanana = false
+            end
+            local c = "https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"
+            loadstring(game:HttpGet(c))()
+            print(("\n"):rep(40))
+        elseif Hub == "Luxury" then
+            _G.Key = "SGA5F-T3KC4-ZPSFY"
+            _G.DiscordId = "1117103662532141056"
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/NightsTimeZ/RoyryX/main/Loader.lua"))();
+            print(("\n"):rep(40))
+        elseif Hub == "RoyX" then
+            _G.Key = "9QJ1L-7EIK2-C9JDH"
+            _G.DiscordId = "1117103662532141056"
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Natsuhanaki/Royx_PC/main/loader.lua"))();
+            print(("\n"):rep(40))
         end
-        tween:Play()
     end
-end
-ToTween(WO.EnemySpawns:FindFirstChild("Cookie Crafter [Lv. 2200]").CFrame * CFrame.new(0,30,0))
-
+end)
