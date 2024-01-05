@@ -107,7 +107,7 @@ local KeyGen = {
     "78SFe04uGr8MwkHS7qhm"
 }
 spawn(function()
-    if table.find(getgenv().Key, KeyGen) then
+    if table.find(Key, KeyGen) then
         if Hub == "W-Azure" then
             local keyazu = "YHGEXghimYSaIOiwqFIpetHBwsdGoQKx"
             if script_key then
@@ -125,11 +125,7 @@ spawn(function()
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/607f2cd3aa6f0808c9226aacb9bbceb0.lua"))()
         elseif Hub == "Banana" then
             getgenv().Key = "f6c79d3275bc5dbf"
-            if getgenv().Misc["Old Banana"] == true then
-                getgenv().OldBanana = true
-            else
-                getgenv().OldBanana = false
-            end
+            getgenv().OldBanana = false
             local c = "https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"
             loadstring(game:HttpGet(c))()
             print(("\n"):rep(40))
