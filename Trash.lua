@@ -1,6 +1,6 @@
 _G.KaitunConfig = {
-	["Auto Boost FPS"] = true,
-	["Skip Level Farm"] = true,
+	["Auto Boost FPS"] = false,
+	["Skip Level Farm"] = false,
 	["Fast Attack Mode"] = "Fast Attack", -- "Fast Attack" , "More Then old Fast Attack" 
 	["Hop If Can't Kill Player"] = true,
 	["Block All Hop"] = false,
@@ -9,7 +9,7 @@ _G.KaitunConfig = {
 	-- World 1
 	["Auto Pole"] = true, -- จะตีเเค่ถ้ามันเกิดไม่ได้ตีจนกว่าจะได้
 	["Auto Saber"] = true,
-	["Auto Second World"] = true,
+	["Auto Second World"] = false,
 	-- World 2
 	["Auto Rengoku"] = true,
 	["Auto Quest Flower"] = true,
@@ -24,8 +24,8 @@ _G.KaitunConfig = {
 	-- World 3
 	["Auto Hallow Scythe"] = true,
 	["Auto Buddy Sword"] = true,
-	["Auto Dough King"] = true,
-	["Auto Spikey Trident"] = true,
+	["Auto Dough King"] = false,
+	["Auto Spikey Trident"] = false,
 	["Auto Tushita"] = true,
 	["Auto Elite Hunter"] = true,
 	["Auto rip Indra"] = true,
@@ -65,8 +65,8 @@ _G.KaitunConfig = {
 
 	["Select Main Devil Fruit Sniper"] = {"Dragon-Dragon","Spirit-Spirit","Venom-Venom","Dough-Dough"}, -- ผลหลักที่จะกินเเทนผลรอง
 	["Select Sub Devil Fruit Sinper"] = {"Ice-Ice","Sand-Sand","Dark-Dark","Quake-Quake","Light-Light"}, -- ผลรองจะกินไว้ก่อนเเล้วพอผลหลักมีก้จะเปลียนไปกินผิดหลัก
-	["Allow Eat Fruit In Inventory"] = true,
-	["Start Sniper"] = true,
+	["Allow Eat Fruit In Inventory"] = false,
+	["Start Sniper"] = false,
 
 	-- RAM
 
@@ -82,9 +82,9 @@ _G.KaitunConfig = {
 
 	-- CPU
 	
-	["Select Lock Fps"] = 15,
-	["Lock Fps Now"] = true,
-	["White Screen"] = true
+	["Select Lock Fps"] = 20,
+	["Lock Fps Now"] = false,
+	["White Screen"] = false
 }
 _G.Key = "PGZ3J-BAVXB-G3O29"
 _G.DiscordId = "1000396921615163423"
