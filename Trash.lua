@@ -11,15 +11,15 @@ _G.KaitunConfig = {
 	["Auto Saber"] = true,
 	["Auto Second World"] = false,
 	-- World 2
-	["Auto Rengoku"] = true,
-	["Auto Quest Flower"] = true,
-	["Auto V3 Race"] = true,
-	["Auto Bartilo"] = true,
-	["Auto Cursed Captain"] = true,
-	["Auto Darkbeard"] = true,
-	["Auto Factory"] = true,
-	["Auto Third World"] = true,
-	["Skip Get Item Guitar"] = true, -- จะไม่ หาของทำ soul guiter ในโลก 2 เบบ หาจนกว่าจะได้ will not find item until get all item for do soul guiter ( open recommend เเนะนำให้เปิด )
+	["Auto Rengoku"] = false,
+	["Auto Quest Flower"] = false,
+	["Auto V3 Race"] = false,
+	["Auto Bartilo"] = false,
+	["Auto Cursed Captain"] = false,
+	["Auto Darkbeard"] = false,
+	["Auto Factory"] = false,
+	["Auto Third World"] = false,
+	["Skip Get Item Guitar"] = false, -- จะไม่ หาของทำ soul guiter ในโลก 2 เบบ หาจนกว่าจะได้ will not find item until get all item for do soul guiter ( open recommend เเนะนำให้เปิด )
 	["Allise Fruit"] = {"Dragon-Dragon","Spirit-Spirit","Venom-Venom","Dough-Dough"}, -- จะไม่ใช้ผลพวกนี้ในการเปิดประตูไปโลก3
 	-- World 3
 	["Auto Hallow Scythe"] = true,
@@ -37,12 +37,12 @@ _G.KaitunConfig = {
 	
 	-- Fighting Style 
 	
-	["Auto God Human"] = true,
-	["Auto Superhuman"] = true,
-	["Auto Death Step"] = true,
-	["Auto Sharkman Karate"] = true,
-	["Auto Electric Claw"] = true,
-	["Auto Dargon Talon"] = true,
+	["Auto God Human"] = false,
+	["Auto Superhuman"] = false,
+	["Auto Death Step"] = false,
+	["Auto Sharkman Karate"] = false,
+	["Auto Electric Claw"] = false,
+	["Auto Dargon Talon"] = false,
 	
 	["Auto Mastery Devil Fruit"] = true,
 	["Skill Setting"] = { -- ถ้าไม่ใส่จะใช้ mode auto
